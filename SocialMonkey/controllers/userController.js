@@ -59,5 +59,40 @@ module.exports = {
     }   catch (err) {
         res.status(500).json(err);
     }
-}
+},
+
+async createFriend(req, res) {
+  try {
+    const user = await User.findByIdAndUpdate( req.params.userId, {$push:{friends:req.bodyfriendId}} )
+    
+    if (!user) {
+        return res.status(404).json({ message: 'No user with that ID' });
+      }
+      res.status(200).json(user)
+
+
+}   catch (err) {
+    res.status(500).json(err);
+}  
+
+},
+
+async deleteFriend(req, res) {
+  try {
+    const user = await User.findByIdAndUpdate( req.params.userId, {$pull:{friends:req.bodyfriendId}} )
+    
+    if (!user) {
+        return res.status(404).json({ message: 'No user with that ID' });
+      }
+      res.status(200).json(user)
+
+
+}   catch (err) {
+    res.status(500).json(err);
+}  
+
+},
+
+
+
 };
