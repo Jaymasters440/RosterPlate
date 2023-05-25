@@ -1,11 +1,16 @@
-const Thought = require('../models/Thought');
+const Thought = require('../models/');
 
 module.exports = {
   async getThoughts(req, res) {
+    console.log("get route")
+    //const thoughts = await Thought.find();
+    //console.log(thoughts)
     try {
       const thoughts = await Thought.find();
-      res.json(thoughts);
+      console.log(thoughts);
+      res.status(200).json(thoughts);
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   },

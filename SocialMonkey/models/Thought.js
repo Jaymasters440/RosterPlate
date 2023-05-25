@@ -18,8 +18,13 @@ const { Schema, model } = require('mongoose');
 // Schema to create User model
 const thoughtSchema = new Schema(
   {
-    _id:{type:Schema.ObjectId},
-    username: {type:String, required: true },
+    _id:{
+        type:Schema.ObjectId
+    },
+    username: {
+        type:String, 
+        required: true 
+    },
     thoughtText: {type:String, required: true, maxLen:280 },
    
     createdAt:{
@@ -40,8 +45,9 @@ const thoughtSchema = new Schema(
     // Here we are indicating that we want virtuals to be included with our response, overriding the default behavior
     toJSON: {
       virtuals: true,
+      getters: true,
     },
-    // id: false,
+    id: false,
   }
 );
 
@@ -56,6 +62,6 @@ thoughtSchema
   
 
 // Initialize our User model
-const Thought = model('thought', thoughtSchema);
+const Thought = model('Thought', thoughtSchema);
 
 module.exports = Thought;
