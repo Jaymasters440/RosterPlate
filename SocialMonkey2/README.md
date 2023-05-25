@@ -36,7 +36,7 @@ Jay Masters with assistance from UW tutors
 
 ### Issues
 
-After much work with tutors and TA's I have been unable to make this run in insomnia. multiple TA's say the code is correct and it should run but for some reason it will not. 
+After much work with tutors and TA's I have been unable to make this run in insomnia. multiple TA's say the code is correct and it should run but for some reason it will not. image.png
 
 ## Author
 
